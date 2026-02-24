@@ -11,8 +11,8 @@ Imagine a world where a farmer doesn't have to walk miles in the heat just to fl
 ---
 
 ## 👨‍🌾 The Problem: Why this matters
-Indian farmers face three massive challenges:
-1.  **The "Kilometer Gap":** Farmers walk around 5km daily just to toggle irrigation valves.
+Indian farmers (like my father) face three massive challenges:
+1.  **The "Kilometer Gap":** Farmers walk 5-10km daily just to toggle irrigation valves.
 2.  **Motor Burnouts:** If a pump runs dry, the motor burns out. This costs a farmer their entire month's profit.
 3.  **The Cloud Gap:** Most "Smart Agri" apps need 4G/Cloud. In our villages, the internet is a luxury, not a guarantee.
 
@@ -20,12 +20,12 @@ Indian farmers face three massive challenges:
 
 ## 🚀 The Solution: "AMD Brain" Gateway
 We don't need the Cloud. We brought the processing power to the farm.
-Agri-Brain uses a local **Laptop** as an **Edge Gateway**. It talks to **ESP32 controllers** in the field using MQTT.
+Agri-Brain uses a local **AMD Ryzen Laptop** as an **Edge Gateway**. It talks to **ESP32 controllers** in the field using MQTT.
 
 ### 🧠 How it works (Simple Version):
-1.  **Sensors** in the soil send moisture/pH data to the Laptop.
-2.  **Acoustic AI** (on Laptop) listens to the pump motor. If it sounds "wrong," the laptop tells the pump to shut down instantly.
-3.  **Vision AI** (on Laptop) watches the plants for disease.
+1.  **Sensors** in the soil send moisture/pH data to the AMD Laptop.
+2.  **Acoustic AI** (on AMD) listens to the pump motor. If it sounds "wrong," the laptop tells the pump to shut down instantly.
+3.  **Vision AI** (on AMD) watches the plants for disease.
 4.  **Voice Ledger:** The farmer just says *"Added 5kg Potash"* in Kannada/Hindi, and the laptop records it—no typing needed.
 
 ---
@@ -77,7 +77,13 @@ We have successfully built a **Zero-Budget Prototype** using:
 
 ---
 
-## 🛠️ Quick Start (Try it in 2 minutes!)
+## � Simulation Results (Phase 1)
+![Phase 1 Simulation Result](assets/phase1_demo.png)
+*Above: Wokwi ESP32 simulation reporting 0% moisture, triggering the Python AI Watcher to send AUTO-COMMANDS to turn ON all 10 grids.*
+
+---
+
+## �🛠️ Quick Start (Try it in 2 minutes!)
 
 ### 1. The Virtual Farm (Wokwi)
 - Open `firmware/diagram.json` and `firmware/src/main.cpp`.
@@ -109,3 +115,4 @@ py gateway/verify_mqtt.py
 ## 🤝 Project by Shravan HS
 *Built for AMD Slingshot 2026 Innovation Challenge*
 
+> "Engineering is not just about code; it's about solving the struggles I saw in my father's eyes."
