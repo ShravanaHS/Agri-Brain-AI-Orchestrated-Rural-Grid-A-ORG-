@@ -11,7 +11,7 @@ Imagine a world where a farmer doesn't have to walk miles in the heat just to fl
 ---
 
 ## 👨‍🌾 The Problem: Why this matters
-Indian farmers (like my father) face three massive challenges:
+Indian farmers face three massive challenges:
 1.  **The "Kilometer Gap":** Farmers walk 5-10km daily just to toggle irrigation valves.
 2.  **Motor Burnouts:** If a pump runs dry, the motor burns out. This costs a farmer their entire month's profit.
 3.  **The Cloud Gap:** Most "Smart Agri" apps need 4G/Cloud. In our villages, the internet is a luxury, not a guarantee.
@@ -20,12 +20,12 @@ Indian farmers (like my father) face three massive challenges:
 
 ## 🚀 The Solution: "AMD Brain" Gateway
 We don't need the Cloud. We brought the processing power to the farm.
-Agri-Brain uses a local **AMD Ryzen Laptop** as an **Edge Gateway**. It talks to **ESP32 controllers** in the field using MQTT.
+Agri-Brain uses a local ** Laptop** as an **Edge Gateway**. It talks to **ESP32 controllers** in the field using MQTT.
 
 ### 🧠 How it works (Simple Version):
 1.  **Sensors** in the soil send moisture/pH data to the AMD Laptop.
-2.  **Acoustic AI** (on AMD) listens to the pump motor. If it sounds "wrong," the laptop tells the pump to shut down instantly.
-3.  **Vision AI** (on AMD) watches the plants for disease.
+2.  **Acoustic AI** (on laptop) listens to the pump motor. If it sounds "wrong," the laptop tells the pump to shut down instantly.
+3.  **Vision AI** (on laptop) watches the plants for disease.
 4.  **Voice Ledger:** The farmer just says *"Added 5kg Potash"* in Kannada/Hindi, and the laptop records it—no typing needed.
 
 ---
@@ -52,17 +52,17 @@ graph TD
         Broker[HiveMQ / Mosquitto]
     end
 
-    subgraph "AMD AI Gateway (The Brain)"
-        AMD[AMD Ryzen Laptop]
+    subgraph "AI Gateway (The Brain)"
+        PC[Laptop]
         Acoustic[Acoustic AI Model]
         Vision[Vision AI Model]
-        AMD --> Acoustic
-        AMD --> Vision
+        PC --> Acoustic
+        PC --> Vision
     end
 
     %% Flow
     ESP <== "MQTT Telemetry" ==> Broker
-    Broker <== "AI Commands" ==> AMD
+    Broker <== "AI Commands" ==> PC
 ```
 
 ---
@@ -114,5 +114,3 @@ py gateway/verify_mqtt.py
 
 ## 🤝 Project by Shravan HS
 *Built for AMD Slingshot 2026 Innovation Challenge*
-
-> "Engineering is not just about code; it's about solving the struggles I saw in my father's eyes."
