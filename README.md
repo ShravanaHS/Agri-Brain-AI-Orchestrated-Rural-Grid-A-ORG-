@@ -1,5 +1,5 @@
 # 🌾 Agri-Brain: AI-Orchestrated Rural Grid (A-ORG)
-### *Solving the "Kilometer Gap" with AMD Edge AI*
+### *Solving the "Kilometer Gap" with Edge AI*
 
 ---
 
