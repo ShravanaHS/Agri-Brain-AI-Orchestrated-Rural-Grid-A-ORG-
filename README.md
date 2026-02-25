@@ -77,9 +77,10 @@ We have successfully built a **Zero-Budget Prototype** using:
 
 ---
 
-## � Simulation Results (Phase 1)
+##  Simulation Results (Phase 1)
 ![Phase 1 Simulation Result](assets/phase1_demo.png)
 *Above: Wokwi ESP32 simulation reporting 0% moisture, triggering the Python AI Watcher to send AUTO-COMMANDS to turn ON all 10 grids.*
+## [Wokwi Simulatation](https://wokwi.com/projects/456861684447098881)
 
 ---
 
