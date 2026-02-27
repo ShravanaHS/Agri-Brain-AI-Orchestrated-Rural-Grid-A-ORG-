@@ -4,14 +4,17 @@ import 'package:mqtt_client/mqtt_server_client.dart';
 
 class AgriBrainMqttService {
   late MqttServerClient client;
-  final String server = 'broker.hivemq.com';
+  final String server = '33712c7cb7174024b63e809028448b03.s1.eu.hivemq.cloud';
   final String topicPrefix = 'agribrain_shravan';
-  final int port = 1883;
+  final int port = 8883;
+  final String username = 'YOUR_MQTT_USERNAME';
+  final String password = 'YOUR_MQTT_PASSWORD';
 
   AgriBrainMqttService() {
     String clientId = 'AgriBrainApp_${DateTime.now().millisecondsSinceEpoch}';
     client = MqttServerClient(server, clientId);
     client.port = port;
+    client.secure = true; // Enable TLS
     client.logging(on: false);
     client.keepAlivePeriod = 20;
     client.onDisconnected = onDisconnected;
@@ -21,7 +24,7 @@ class AgriBrainMqttService {
 
   Future<bool> connect() async {
     try {
-      await client.connect();
+      await client.connect(username, password);
       return true;
     } catch (e) {
       print('MQTT Exception: $e');

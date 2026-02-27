@@ -103,12 +103,79 @@ py gateway/verify_mqtt.py
 
 ---
 
+## 🌊 The 10-Grid Irrigation Strategy
+Agri-Brain (A-ORG) replaces wasteful broad-field irrigation with a hyper-efficient **Sequential Grid System**.
+- **The Hardware**: 1 Main Pump + 10 Solenoid Valves managed by an ESP32.
+- **Micro-Irrigation**: The system waters section-by-section (e.g., Grid 1, then Grid 2), maintaining maximum water pressure at each point.
+- **ESP32 Safety**: Built-in 2-hour "Hard Timeout" logic prevents accidental flooding if the gateway disconnects.
+
+## 🧠 Farm Health AI (AMD-Powered)
+
+### 1. Vision AI: Leaf Disease Detection
+Using the processing power of **AMD Ryzen™**, the gateway processes crop images locally to detect:
+- Early/Late Blight in Tomatoes.
+- Pest infestations (Leaf Miner/Mites).
+- Nutrient deficiencies showing in leaf color.
+
+### 2. Soil Health Mapping
+Real-time analysis of pH and moisture across all 10 grids.
+- **Localized Mapping**: Grid-specific health scores.
+- **Actionable Insights**: Instant advice on soil amendments (e.g., "Add Lime" for acidity).
+
+### 3. Gemini AI Assistant
+A local LLM bridge that acts as a 24/7 Agricultural Advisor, answering queries about crop rotation, water profiles, and pest management entirely offline.
+
+---
+
+## 🏗️ Technical Architecture
+```mermaid
+graph TD
+    subgraph "The Field"
+        ESP[ESP32 Controller]
+        Solenoids[10x Solenoid Valves]
+        Sensors[Moisture + pH Sensors]
+        ESP --> Solenoids
+        Sensors --> ESP
+    end
+
+    subgraph "Communication"
+        Broker[HiveMQ / Mosquitto]
+    end
+
+    subgraph "AMD AI Gateway (The Brain)"
+        AMD[AMD Ryzen Laptop]
+        Irrigation[Sequential Grid Engine]
+        Vision[Vision AI Node]
+        Gemini[Local AI Advisor]
+        AMD --> Irrigation
+        AMD --> Vision
+        AMD --> Gemini
+    end
+
+    subgraph "User UI"
+        App[Flutter Dashboard]
+    end
+
+    %% Flow
+    ESP <==> Broker
+    Broker <==> AMD
+    App <==> Broker
+```
+
+---
+
 ## 📈 Roadmap to Production
 - [x] **Day 1:** Phase 1 (Wokwi + Public Broker) - **DONE**
-- [ ] **Day 2:** Acoustic AI Model (Detecting Motor cavitation).
-- [ ] **Day 3:** Local NLP Voice Ledger (Vosk integration).
-- [ ] **Day 4:** Flutter App UI (The "Cult.fit" for Farmers).
-- [ ] **Day 5:** Final Integration & Pitch Prep.
+- [x] **Day 2:** 10-Grid Irrigation Logic & Safety - **DONE**
+- [x] **Day 3:** Farm Health AI (Vision & Soil) - **DONE**
+- [x] **Day 4:** Premium Dashboard with Grid Mapping - **DONE**
+- [x] **Day 5:** Final Integration & Pitch Prep - **DONE**
+
+---
+
+## 📦 Extras (Integrated Features)
+- **Acoustic Motor Guard**: Pressure-based run-dry protection.
+- **Local NLP Voice Ledger**: Hands-free logging of farm activities.
 
 ---
 

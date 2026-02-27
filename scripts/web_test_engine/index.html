@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Brain | Virtual Farm Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login Overlay -->
+        <div id="login-overlay" class="overlay">
+            <div class="glass-card login-card">
+                <h2>🚜 Agri-Brain Simulator</h2>
+                <p>Connect to your HiveMQ Cloud Cluster</p>
+                <div class="input-group">
+                    <label>Broker URL (WebSocket)</label>
+                    <input type="text" id="mqtt-url" value="33712c7cb7174024b63e809028448b03.s1.eu.hivemq.cloud">
+                </div>
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="mqtt-user" value="agribrain">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="mqtt-pass" placeholder="HiveMQ Password">
+                </div>
+                <button id="connect-btn" class="primary-btn">Initialize Brain</button>
+            </div>
+        </div>
+
+        <!-- Main Dashboard -->
+        <main id="main-content" class="hidden">
+            <header>
+                <div class="brand">
+                    <h1>Agri-Brain <span>Simulator</span></h1>
+                    <div id="conn-status" class="status-badge connected">Connected</div>
+                </div>
+                <div class="global-controls">
+                    <div class="control-group">
+                        <label>Potentiometer (Pressure Mimic)</label>
+                        <input type="range" min="0" max="80" value="45" class="slider-input"
+                            oninput="updatePressure(this.value)">
+                    </div>
+                    <button id="toggle-auto" class="secondary-btn">Toggle Auto-Drift</button>
+                </div>
+            </header>
+
+            <section class="overview-grid">
+                <!-- Grid items 1-10 will be injected here by JS -->
+            </section>
+
+            <aside class="side-panel">
+                <div class="glass-card log-panel">
+                    <h3>📡 Live MQTT Stream</h3>
+                    <div id="mqtt-log" class="log-container"></div>
+                </div>
+                <div class="glass-card command-panel">
+                    <h3>🎙️ Voice Command Injection</h3>
+                    <div class="input-row">
+                        <input type="text" id="voice-input" placeholder="e.g., Add 5kg Urea to Grid 4">
+                        <button id="send-voice-btn">Send</button>
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
