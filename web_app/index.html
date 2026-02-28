@@ -16,6 +16,284 @@
 
 <body>
 
+    <!-- ═══════════ SVG SPRITE SHEET ═══════════ -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <defs>
+
+            <!-- Wheat plant -->
+            <symbol id="icon-wheat" viewBox="0 0 60 90">
+                <!-- Stalk -->
+                <line x1="30" y1="88" x2="30" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Leaves -->
+                <path d="M30 65 Q18 58 16 48 Q24 54 30 65Z" fill="currentColor" opacity=".7" />
+                <path d="M30 65 Q42 58 44 48 Q36 54 30 65Z" fill="currentColor" opacity=".7" />
+                <path d="M30 50 Q16 43 14 32 Q23 40 30 50Z" fill="currentColor" opacity=".55" />
+                <path d="M30 50 Q44 43 46 32 Q37 40 30 50Z" fill="currentColor" opacity=".55" />
+                <!-- Grain head -->
+                <ellipse cx="30" cy="14" rx="4" ry="8" fill="currentColor" />
+                <ellipse cx="22" cy="20" rx="3.5" ry="7" fill="currentColor" transform="rotate(-20 22 20)" />
+                <ellipse cx="38" cy="20" rx="3.5" ry="7" fill="currentColor" transform="rotate(20 38 20)" />
+                <ellipse cx="17" cy="28" rx="3" ry="6" fill="currentColor" transform="rotate(-30 17 28)" opacity=".8" />
+                <ellipse cx="43" cy="28" rx="3" ry="6" fill="currentColor" transform="rotate(30 43 28)" opacity=".8" />
+            </symbol>
+
+            <!-- Corn plant -->
+            <symbol id="icon-corn" viewBox="0 0 60 90">
+                <!-- Stalk -->
+                <line x1="30" y1="88" x2="30" y2="10" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                <!-- Large leaves -->
+                <path d="M30 72 Q10 60 8 42 Q22 58 30 72Z" fill="currentColor" opacity=".65" />
+                <path d="M30 72 Q50 60 52 42 Q38 58 30 72Z" fill="currentColor" opacity=".65" />
+                <path d="M30 52 Q8 38 6 20 Q20 38 30 52Z" fill="currentColor" opacity=".5" />
+                <path d="M30 52 Q52 38 54 20 Q40 38 30 52Z" fill="currentColor" opacity=".5" />
+                <!-- Corn ear (offset left on stalk) -->
+                <rect x="18" y="28" width="12" height="28" rx="6" fill="currentColor" opacity=".9" />
+                <!-- Corn kernels rows -->
+                <circle cx="22" cy="33" r="2" fill="rgba(0,0,0,0.3)" />
+                <circle cx="28" cy="33" r="2" fill="rgba(0,0,0,0.3)" />
+                <circle cx="22" cy="39" r="2" fill="rgba(0,0,0,0.3)" />
+                <circle cx="28" cy="39" r="2" fill="rgba(0,0,0,0.3)" />
+                <circle cx="22" cy="45" r="2" fill="rgba(0,0,0,0.3)" />
+                <circle cx="28" cy="45" r="2" fill="rgba(0,0,0,0.3)" />
+                <!-- Silk tassel -->
+                <path d="M24 28 Q20 18 18 12M28 28 Q28 16 27 10M24 28 Q22 15 24 8" stroke="currentColor"
+                    stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".7" />
+            </symbol>
+
+            <!-- Tomato plant -->
+            <symbol id="icon-tomato" viewBox="0 0 70 90">
+                <!-- Stem -->
+                <line x1="35" y1="88" x2="35" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Branches -->
+                <line x1="35" y1="68" x2="20" y2="55" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="35" y1="68" x2="50" y2="55" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="35" y1="58" x2="35" y2="42" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <!-- Leaves -->
+                <ellipse cx="14" cy="50" rx="10" ry="6" fill="currentColor" transform="rotate(-30 14 50)"
+                    opacity=".7" />
+                <ellipse cx="56" cy="50" rx="10" ry="6" fill="currentColor" transform="rotate(30 56 50)" opacity=".7" />
+                <ellipse cx="35" cy="38" rx="9" ry="5" fill="currentColor" transform="rotate(-10 35 38)" opacity=".7" />
+                <!-- Tomatoes -->
+                <circle cx="20" cy="44" r="9" fill="currentColor" />
+                <circle cx="50" cy="44" r="9" fill="currentColor" />
+                <circle cx="35" cy="30" r="9" fill="currentColor" />
+                <!-- Tomato caps -->
+                <path d="M20 35 Q22 32 24 34" stroke="rgba(0,0,0,0.3)" stroke-width="1.5" fill="none" />
+                <path d="M50 35 Q52 32 54 34" stroke="rgba(0,0,0,0.3)" stroke-width="1.5" fill="none" />
+                <path d="M35 21 Q37 18 39 20" stroke="rgba(0,0,0,0.3)" stroke-width="1.5" fill="none" />
+            </symbol>
+
+            <!-- Sunflower -->
+            <symbol id="icon-sunflower" viewBox="0 0 60 90">
+                <!-- Stalk -->
+                <line x1="30" y1="88" x2="30" y2="30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Leaves -->
+                <path d="M30 72 Q14 64 12 50 Q22 60 30 72Z" fill="currentColor" opacity=".6" />
+                <path d="M30 72 Q46 64 48 50 Q38 60 30 72Z" fill="currentColor" opacity=".6" />
+                <path d="M30 58 Q12 48 10 34 Q22 46 30 58Z" fill="currentColor" opacity=".5" />
+                <!-- Petals (8 petals) -->
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".85" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".85"
+                    transform="rotate(45 30 30)" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".85"
+                    transform="rotate(90 30 30)" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".85"
+                    transform="rotate(135 30 30)" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".7"
+                    transform="rotate(22.5 30 30)" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".7"
+                    transform="rotate(67.5 30 30)" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".7"
+                    transform="rotate(112.5 30 30)" />
+                <ellipse cx="30" cy="15" rx="5" ry="10" fill="currentColor" opacity=".7"
+                    transform="rotate(157.5 30 30)" />
+                <!-- Seed disc -->
+                <circle cx="30" cy="30" r="10" fill="rgba(0,0,0,0.5)" />
+                <circle cx="30" cy="30" r="7" fill="currentColor" opacity=".2" />
+            </symbol>
+
+            <!-- Water drop (humidity) -->
+            <symbol id="icon-drop" viewBox="0 0 40 50">
+                <path d="M20 2 C20 2 4 22 4 32 C4 41 11 48 20 48 C29 48 36 41 36 32 C36 22 20 2 20 2Z"
+                    fill="currentColor" />
+                <path d="M14 36 Q12 30 18 26" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none"
+                    stroke-linecap="round" />
+            </symbol>
+
+            <!-- Thermometer -->
+            <symbol id="icon-therm" viewBox="0 0 40 60">
+                <rect x="15" y="4" width="10" height="36" rx="5" fill="none" stroke="currentColor" stroke-width="2.5" />
+                <rect x="18" y="8" width="4" height="24" rx="2" fill="currentColor" opacity=".5" />
+                <rect x="18" y="20" width="4" height="12" rx="2" fill="currentColor" />
+                <circle cx="20" cy="48" r="9" fill="currentColor" />
+                <circle cx="20" cy="48" r="5" fill="rgba(255,255,255,0.25)" />
+                <!-- Notches -->
+                <line x1="25" y1="12" x2="28" y2="12" stroke="currentColor" stroke-width="1.5" />
+                <line x1="25" y1="18" x2="28" y2="18" stroke="currentColor" stroke-width="1.5" />
+                <line x1="25" y1="24" x2="28" y2="24" stroke="currentColor" stroke-width="1.5" />
+                <line x1="25" y1="30" x2="28" y2="30" stroke="currentColor" stroke-width="1.5" />
+            </symbol>
+
+            <!-- Motor / Gear -->
+            <symbol id="icon-motor" viewBox="0 0 52 52">
+                <!-- Outer gear teeth -->
+                <path
+                    d="M26 2 L29 8 L33 6 L34 12 L39 12 L38 18 L44 20 L41 25 L46 29 L41 32 L44 37 L38 38 L39 44 L33 44 L34 50 L29 48 L26 54 L23 48 L18 50 L17 44 L11 44 L12 38 L6 37 L9 32 L4 29 L9 25 L6 20 L12 18 L11 12 L16 12 L17 6 L21 8 Z"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"
+                    transform="translate(0 -2)" />
+                <!-- Main gear body -->
+                <circle cx="26" cy="26" r="16" fill="none" stroke="currentColor" stroke-width="2.5" />
+                <circle cx="26" cy="26" r="7" fill="currentColor" opacity=".5" />
+                <circle cx="26" cy="26" r="3" fill="currentColor" />
+            </symbol>
+
+            <!-- Pressure gauge -->
+            <symbol id="icon-gauge" viewBox="0 0 52 52">
+                <!-- Gauge face -->
+                <circle cx="26" cy="26" r="22" fill="none" stroke="currentColor" stroke-width="2.5" />
+                <!-- Scale marks -->
+                <line x1="26" y1="6" x2="26" y2="10" stroke="currentColor" stroke-width="2" />
+                <line x1="26" y1="6" x2="26" y2="10" stroke="currentColor" stroke-width="2"
+                    transform="rotate(45 26 26)" />
+                <line x1="26" y1="6" x2="26" y2="10" stroke="currentColor" stroke-width="2"
+                    transform="rotate(90 26 26)" />
+                <line x1="26" y1="6" x2="26" y2="10" stroke="currentColor" stroke-width="2"
+                    transform="rotate(135 26 26)" />
+                <line x1="26" y1="6" x2="26" y2="10" stroke="currentColor" stroke-width="2"
+                    transform="rotate(180 26 26)" />
+                <!-- Needle -->
+                <line x1="26" y1="26" x2="36" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Center dot -->
+                <circle cx="26" cy="26" r="4" fill="currentColor" />
+                <!-- PSI label arch -->
+                <text x="26" y="42" text-anchor="middle" font-size="7" fill="currentColor"
+                    font-family="Outfit,sans-serif" font-weight="700" opacity=".7">PSI</text>
+            </symbol>
+
+            <!-- Field map / plot icon -->
+            <symbol id="icon-map" viewBox="0 0 52 52">
+                <rect x="4" y="4" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+                <rect x="29" y="4" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+                <rect x="4" y="29" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+                <rect x="29" y="29" width="19" height="19" rx="3" fill="currentColor" opacity=".3" />
+                <rect x="29" y="29" width="19" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2" />
+                <line x1="8" y1="10" x2="19" y2="10" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <line x1="8" y1="14" x2="19" y2="14" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <line x1="33" y1="10" x2="44" y2="10" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <line x1="33" y1="14" x2="44" y2="14" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+            </symbol>
+
+            <!-- AI Brain / Robot -->
+            <symbol id="icon-ai" viewBox="0 0 52 52">
+                <!-- Head -->
+                <rect x="10" y="10" width="32" height="26" rx="8" fill="none" stroke="currentColor"
+                    stroke-width="2.5" />
+                <!-- Eyes -->
+                <circle cx="19" cy="22" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                <circle cx="33" cy="22" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                <circle cx="19" cy="22" r="2" fill="currentColor" />
+                <circle cx="33" cy="22" r="2" fill="currentColor" />
+                <!-- Antenna -->
+                <line x1="26" y1="10" x2="26" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <circle cx="26" cy="3" r="2.5" fill="currentColor" />
+                <!-- Ear connectors -->
+                <line x1="10" y1="18" x2="4" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="10" y1="26" x2="4" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="42" y1="18" x2="48" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="42" y1="26" x2="48" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <!-- Mouth / circuit -->
+                <rect x="18" y="30" width="16" height="3" rx="1.5" fill="currentColor" opacity=".5" />
+                <!-- Body / neck -->
+                <line x1="26" y1="36" x2="26" y2="44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="16" y1="44" x2="36" y2="44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            </symbol>
+
+            <!-- Ledger / Book -->
+            <symbol id="icon-ledger" viewBox="0 0 52 52">
+                <rect x="8" y="4" width="36" height="44" rx="4" fill="none" stroke="currentColor" stroke-width="2.5" />
+                <line x1="16" y1="4" x2="16" y2="48" stroke="currentColor" stroke-width="2" />
+                <line x1="22" y1="14" x2="38" y2="14" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <line x1="22" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <line x1="22" y1="26" x2="38" y2="26" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <line x1="22" y1="32" x2="32" y2="32" stroke="currentColor" stroke-width="1.5" opacity=".6" />
+                <!-- Binding marks -->
+                <circle cx="12" cy="16" r="2" fill="currentColor" opacity=".5" />
+                <circle cx="12" cy="26" r="2" fill="currentColor" opacity=".5" />
+                <circle cx="12" cy="36" r="2" fill="currentColor" opacity=".5" />
+            </symbol>
+
+            <!-- Microphone -->
+            <symbol id="icon-mic" viewBox="0 0 40 52">
+                <rect x="12" y="2" width="16" height="26" rx="8" fill="none" stroke="currentColor" stroke-width="2.5" />
+                <path d="M6 24 Q6 38 20 38 Q34 38 34 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" />
+                <line x1="20" y1="38" x2="20" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="12" y1="48" x2="28" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Sound lines -->
+                <line x1="12" y1="14" x2="28" y2="14" stroke="currentColor" stroke-width="1.5" opacity=".5" />
+                <line x1="12" y1="20" x2="28" y2="20" stroke="currentColor" stroke-width="1.5" opacity=".5" />
+            </symbol>
+
+            <!-- Send -->
+            <symbol id="icon-send" viewBox="0 0 24 24">
+                <line x1="22" y1="2" x2="11" y2="13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linejoin="round" />
+            </symbol>
+
+            <!-- Rain cloud -->
+            <symbol id="icon-rain" viewBox="0 0 52 44">
+                <path
+                    d="M12 28 Q4 28 4 20 Q4 12 12 12 Q12 6 20 6 Q26 6 28 10 Q32 6 38 8 Q46 10 46 18 Q50 20 50 26 Q50 32 42 32 L12 32 Q6 32 6 26Z"
+                    fill="none" stroke="currentColor" stroke-width="2.5" />
+                <line x1="16" y1="36" x2="14" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="26" y1="36" x2="24" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <line x1="36" y1="36" x2="34" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </symbol>
+
+            <!-- Sun -->
+            <symbol id="icon-sun" viewBox="0 0 52 52">
+                <circle cx="26" cy="26" r="9" fill="currentColor" />
+                <line x1="26" y1="4" x2="26" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="26" y1="42" x2="26" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="4" y1="26" x2="10" y2="26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="42" y1="26" x2="48" y2="26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="10" y1="10" x2="14" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="38" y1="38" x2="42" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="42" y1="10" x2="38" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <line x1="14" y1="38" x2="10" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            </symbol>
+
+            <!-- Seedling (ledger empty) -->
+            <symbol id="icon-seedling" viewBox="0 0 40 48">
+                <line x1="20" y1="48" x2="20" y2="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <path d="M20 32 Q8 26 6 14 Q16 20 20 32Z" fill="currentColor" opacity=".8" />
+                <path d="M20 32 Q32 26 34 14 Q24 20 20 32Z" fill="currentColor" opacity=".8" />
+                <!-- Soil line -->
+                <line x1="8" y1="46" x2="32" y2="46" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    opacity=".5" />
+            </symbol>
+
+            <!-- Leaf (AI chat avatar) -->
+            <symbol id="icon-leaf" viewBox="0 0 36 44">
+                <path d="M18 42 C18 42 4 32 4 18 C4 8 10 2 22 2 C34 2 34 10 34 18 C34 28 26 36 18 42Z"
+                    fill="currentColor" />
+                <line x1="18" y1="42" x2="18" y2="12" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"
+                    stroke-linecap="round" />
+                <line x1="18" y1="30" x2="10" y2="22" stroke="rgba(0,0,0,0.2)" stroke-width="1.2"
+                    stroke-linecap="round" />
+                <line x1="18" y1="24" x2="26" y2="18" stroke="rgba(0,0,0,0.2)" stroke-width="1.2"
+                    stroke-linecap="round" />
+            </symbol>
+
+            <!-- Clock icon -->
+            <symbol id="icon-live" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="9" fill="currentColor" />
+            </symbol>
+
+        </defs>
+    </svg>
+
     <!-- ═══════════ LIVING BACKGROUND ═══════════ -->
     <div class="sky-layer"></div>
     <div class="stars-layer" id="stars-layer"></div>
@@ -31,8 +309,6 @@
             <path d="M0,100 C250,40 500,110 800,60 C1100,10 1300,90 1440,70 L1440,120 L0,120 Z" fill="#254d2a" />
         </svg>
     </div>
-
-    <!-- Floating weather particles -->
     <div class="particles" id="particles"></div>
 
     <!-- ═══════════ MAIN DASHBOARD ═══════════ -->
@@ -42,18 +318,20 @@
         <header class="header">
             <div class="logo-area">
                 <div class="logo-emblem">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                        <circle cx="20" cy="20" r="19" fill="url(#logoGrad)" stroke="rgba(255,255,255,0.2)"
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                        <circle cx="22" cy="22" r="21" fill="url(#logoGrad)" stroke="rgba(255,255,255,0.15)"
                             stroke-width="1" />
-                        <!-- Wheat stalk -->
-                        <line x1="20" y1="32" x2="20" y2="12" stroke="#fff" stroke-width="1.5" />
-                        <ellipse cx="20" cy="12" rx="3" ry="5" fill="#f9c74f" />
-                        <ellipse cx="16" cy="16" rx="2.5" ry="4" fill="#f9c74f" transform="rotate(-30 16 16)" />
-                        <ellipse cx="24" cy="16" rx="2.5" ry="4" fill="#f9c74f" transform="rotate(30 24 16)" />
-                        <ellipse cx="14" cy="21" rx="2.5" ry="3.5" fill="#f9c74f" transform="rotate(-40 14 21)" />
-                        <ellipse cx="26" cy="21" rx="2.5" ry="3.5" fill="#f9c74f" transform="rotate(40 26 21)" />
+                        <line x1="22" y1="36" x2="22" y2="14" stroke="#f9c74f" stroke-width="1.8"
+                            stroke-linecap="round" />
+                        <ellipse cx="22" cy="13" rx="3.5" ry="6" fill="#f9c74f" />
+                        <ellipse cx="17" cy="18" rx="3" ry="5" fill="#f9c74f" transform="rotate(-28 17 18)" />
+                        <ellipse cx="27" cy="18" rx="3" ry="5" fill="#f9c74f" transform="rotate(28 27 18)" />
+                        <ellipse cx="14" cy="22" rx="2.5" ry="4.5" fill="#f9c74f" transform="rotate(-38 14 22)"
+                            opacity=".8" />
+                        <ellipse cx="30" cy="22" rx="2.5" ry="4.5" fill="#f9c74f" transform="rotate(38 30 22)"
+                            opacity=".8" />
                         <defs>
-                            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
                                 <stop offset="0%" stop-color="#2d5a27" />
                                 <stop offset="100%" stop-color="#1a3a1a" />
                             </linearGradient>
@@ -64,18 +342,21 @@
                     <h1>AGRI<span class="logo-accent">·BRAIN</span></h1>
                     <div class="logo-sub">
                         <span class="badge-amd">AMD RYZEN™ AI</span>
-                        <span class="badge-live">● LIVE</span>
+                        <span class="badge-live">
+                            <svg width="7" height="7" viewBox="0 0 20 20">
+                                <use href="#icon-live" />
+                            </svg>
+                            LIVE
+                        </span>
                     </div>
                 </div>
             </div>
 
             <div class="header-right">
-                <!-- Live clock -->
                 <div class="farm-clock">
-                    <div class="clock-time" id="clock-time">--:--</div>
+                    <div class="clock-time" id="clock-time">--:--:--</div>
                     <div class="clock-date" id="clock-date">--- --</div>
                 </div>
-                <!-- Status pills -->
                 <div class="status-cluster">
                     <div class="status-pill" id="mqtt-pill">
                         <span class="s-dot"></span>
@@ -99,12 +380,16 @@
             </div>
         </header>
 
-        <!-- ── HERO FARM BANNER ────────────────────────────── -->
+        <!-- ── HERO BANNER ────────────────────────────────── -->
         <div class="hero-banner">
             <div class="hero-content">
                 <div class="hero-stat-row">
                     <div class="hero-stat">
-                        <div class="hs-icon">💧</div>
+                        <div class="hs-icon">
+                            <svg viewBox="0 0 40 50" width="38" height="48">
+                                <use href="#icon-drop" style="color:var(--water-blue)" />
+                            </svg>
+                        </div>
                         <div class="hs-body">
                             <div class="hs-label">SOIL HUMIDITY</div>
                             <div class="hs-value"><span id="avg-humidity">--</span><span class="hs-unit">%</span></div>
@@ -115,7 +400,11 @@
                     </div>
                     <div class="hero-divider"></div>
                     <div class="hero-stat">
-                        <div class="hs-icon">🌡️</div>
+                        <div class="hs-icon">
+                            <svg viewBox="0 0 40 60" width="32" height="48">
+                                <use href="#icon-therm" style="color:var(--amber)" />
+                            </svg>
+                        </div>
                         <div class="hs-body">
                             <div class="hs-label">TEMPERATURE</div>
                             <div class="hs-value"><span id="avg-temp">--</span><span class="hs-unit">°C</span></div>
@@ -126,7 +415,11 @@
                     </div>
                     <div class="hero-divider"></div>
                     <div class="hero-stat">
-                        <div class="hs-icon">⚙️</div>
+                        <div class="hs-icon">
+                            <svg viewBox="0 0 52 52" width="44" height="44">
+                                <use href="#icon-motor" style="color:var(--green-neon)" />
+                            </svg>
+                        </div>
                         <div class="hs-body">
                             <div class="hs-label">PUMP STATUS</div>
                             <div class="hs-value pump-val" id="motor-state">OFF</div>
@@ -135,7 +428,11 @@
                     </div>
                     <div class="hero-divider"></div>
                     <div class="hero-stat">
-                        <div class="hs-icon">🔬</div>
+                        <div class="hs-icon">
+                            <svg viewBox="0 0 52 52" width="44" height="44">
+                                <use href="#icon-gauge" style="color:var(--green-neon)" />
+                            </svg>
+                        </div>
                         <div class="hs-body">
                             <div class="hs-label">PIPE PRESSURE</div>
                             <div class="hs-value">
@@ -147,18 +444,15 @@
                     </div>
                 </div>
             </div>
-            <!-- Animated crop silhouette across the hero -->
-            <div class="hero-crops" aria-hidden="true">
-                <span class="hc hc1">🌾</span><span class="hc hc2">🌽</span><span class="hc hc3">🌾</span>
-                <span class="hc hc4">🍅</span><span class="hc hc5">🌾</span><span class="hc hc6">🌻</span>
-                <span class="hc hc7">🌾</span><span class="hc hc8">🥦</span><span class="hc hc9">🌾</span>
-                <span class="hc hc10">🌽</span><span class="hc hc11">🌾</span><span class="hc hc12">🌾</span>
-            </div>
+            <!-- Animated crop SVG silhouettes across the hero bottom -->
+            <div class="hero-crops" aria-hidden="true" id="hero-crops-row"></div>
         </div>
 
         <!-- ── ACTIVE IRRIGATION BAR ───────────────────────── -->
         <div class="irrigation-alert" id="active-bar" style="display:none">
-            <div class="ia-rain-icon">🌧️</div>
+            <svg viewBox="0 0 52 44" width="26" height="22" class="ia-rain-svg">
+                <use href="#icon-rain" style="color:var(--water-blue)" />
+            </svg>
             <div class="ia-pulse"></div>
             <span id="active-bar-text">Irrigation active…</span>
         </div>
@@ -170,19 +464,20 @@
             <div class="field-map-card farm-card">
                 <div class="fc-header">
                     <div class="fc-title">
-                        <span class="fc-icon">🗺️</span>
+                        <svg viewBox="0 0 52 52" width="22" height="22" class="fc-svg-icon">
+                            <use href="#icon-map" style="color:var(--green-neon)" />
+                        </svg>
                         <h2>FIELD MAP</h2>
                         <span class="fc-sub">4-Zone Smart Irrigation</span>
                     </div>
                     <div class="weather-badge" id="weather-badge">
-                        <span>☀️</span> <span id="weather-text">Clear Sky</span>
+                        <svg viewBox="0 0 52 52" width="16" height="16" id="weather-icon">
+                            <use href="#icon-sun" style="color:var(--gold)" />
+                        </svg>
+                        <span id="weather-text">Clear Sky</span>
                     </div>
                 </div>
-
-                <!-- Field plot grid -->
                 <div class="field-grid" id="grid-container"></div>
-
-                <!-- Field legend -->
                 <div class="field-legend">
                     <div class="fl-item"><span class="fl-dot idle"></span>IDLE</div>
                     <div class="fl-item"><span class="fl-dot active"></span>VALVE OPEN</div>
@@ -195,21 +490,29 @@
             <div class="gemini-card farm-card">
                 <div class="fc-header">
                     <div class="fc-title">
-                        <span class="fc-icon">🤖</span>
+                        <svg viewBox="0 0 52 52" width="22" height="22" class="fc-svg-icon">
+                            <use href="#icon-ai" style="color:var(--green-neon)" />
+                        </svg>
                         <h2>AGRI-GEMINI</h2>
                         <span class="fc-sub">AI Farm Advisor</span>
                     </div>
                     <button id="mic-btn" class="mic-btn" title="Voice Command (Chrome/Edge)">
-                        <span id="mic-icon">🎤</span>
+                        <svg viewBox="0 0 40 52" width="18" height="22" id="mic-svg">
+                            <use href="#icon-mic" style="color:currentColor" />
+                        </svg>
                     </button>
                 </div>
                 <div class="chat-box" id="chat-box">
                     <div class="msg ai">
-                        <div class="ai-avatar">🌿</div>
+                        <div class="ai-avatar">
+                            <svg viewBox="0 0 36 44" width="18" height="22">
+                                <use href="#icon-leaf" style="color:var(--green-neon)" />
+                            </svg>
+                        </div>
                         <div class="msg-bubble">
                             Hello, Farmer! I'm <strong>Agri-Gemini</strong>. Your smart farm AI advisor.<br><br>
-                            🗺️ <em>Switch to MANUAL mode</em> and click a field region to irrigate it.<br>
-                            💬 Or ask me anything — crop health, soil, pest control…
+                            Switch to <em>MANUAL mode</em> and click a field region to irrigate it, or ask me anything —
+                            crop health, soil, pest control…
                         </div>
                     </div>
                 </div>
@@ -217,10 +520,8 @@
                     <input type="text" id="chat-input" placeholder="Ask about soil, crops, weather, pests…"
                         autocomplete="off">
                     <button id="send-btn" class="send-btn" title="Send">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <line x1="22" y1="2" x2="11" y2="13" />
-                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        <svg viewBox="0 0 24 24" width="15" height="15">
+                            <use href="#icon-send" style="color:currentColor" />
                         </svg>
                     </button>
                 </div>
@@ -233,7 +534,9 @@
             <div class="farm-card ledger-card">
                 <div class="fc-header">
                     <div class="fc-title">
-                        <span class="fc-icon">📖</span>
+                        <svg viewBox="0 0 52 52" width="22" height="22" class="fc-svg-icon">
+                            <use href="#icon-ledger" style="color:var(--green-neon)" />
+                        </svg>
                         <h2>FARM LEDGER</h2>
                         <span class="fc-sub">Command &amp; Event Log</span>
                     </div>
@@ -241,7 +544,10 @@
                 </div>
                 <div class="ledger-list" id="ledger-list">
                     <div class="ledger-empty">
-                        <span>🌱</span> No farm commands recorded yet. Use the chat or click a field region to start.
+                        <svg viewBox="0 0 40 48" width="22" height="28">
+                            <use href="#icon-seedling" style="color:var(--green-neon)" />
+                        </svg>
+                        No farm commands recorded yet. Use the chat or click a field region to start.
                     </div>
                 </div>
             </div>
@@ -252,9 +558,8 @@
     <!-- ═══════════ IRRIGATION MODAL ═══════════ -->
     <div class="modal-overlay" id="irrigation-modal">
         <div class="modal-card">
-            <!-- Animated rain inside modal -->
             <div class="modal-rain" aria-hidden="true"></div>
-            <div class="modal-region-icon" id="modal-crop-icon">🌾</div>
+            <div class="modal-crop-svg" id="modal-crop-svg"></div>
             <div class="modal-region-badge" id="modal-region-badge">R1</div>
             <h3 id="modal-grid-title">IRRIGATE REGION 1</h3>
             <p class="modal-sub">Set water duration for this field zone</p>
@@ -273,7 +578,12 @@
             </div>
             <div class="modal-btns">
                 <button class="mbtn mbtn-cancel" id="modal-cancel">✕ Cancel</button>
-                <button class="mbtn mbtn-start" id="modal-start">💧 Start Irrigation</button>
+                <button class="mbtn mbtn-start" id="modal-start">
+                    <svg viewBox="0 0 40 50" width="14" height="16">
+                        <use href="#icon-drop" style="color:currentColor" />
+                    </svg>
+                    Start Irrigation
+                </button>
             </div>
         </div>
     </div>

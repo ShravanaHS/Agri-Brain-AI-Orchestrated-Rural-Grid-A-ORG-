@@ -6,11 +6,16 @@
 
 // ── CROP CONFIG per region ────────────────────────────────
 const CROPS = {
-    1: { icon: '🌾', name: 'Wheat', growSpeed: '3.8s' },
-    2: { icon: '🌽', name: 'Corn', growSpeed: '4.2s' },
-    3: { icon: '🍅', name: 'Tomato', growSpeed: '3.5s' },
-    4: { icon: '🌻', name: 'Sunflower', growSpeed: '4.6s' },
+    1: { svgId: 'icon-wheat', name: 'Wheat', color: 'var(--gold)', growSpeed: '3.8s' },
+    2: { svgId: 'icon-corn', name: 'Corn', color: 'var(--amber)', growSpeed: '4.2s' },
+    3: { svgId: 'icon-tomato', name: 'Tomato', color: 'var(--tomato)', growSpeed: '3.5s' },
+    4: { svgId: 'icon-sunflower', name: 'Sunflower', color: 'var(--gold)', growSpeed: '4.6s' },
 };
+
+function cropSVG(regionId, w, h) {
+    const c = CROPS[regionId];
+    return `<svg viewBox="0 0 70 90" width="${w}" height="${h}" style="overflow:visible"><use href="#${c.svgId}" style="color:${c.color}"/></svg>`;
+}
 
 // ── CONFIG ────────────────────────────────────────────────
 const CONFIG = {
@@ -61,6 +66,18 @@ function buildStars() {
         `;
         layer.appendChild(star);
     }
+}
+
+// ── BUILD HERO CROP ROW (SVG plants) ──────────────────────────────
+function buildHeroCrops() {
+    const row = $('hero-crops-row');
+    if (!row) return;
+    [1, 2, 1, 3, 1, 4, 1, 2, 1, 3, 1, 4].forEach((rid, i) => {
+        const span = document.createElement('span');
+        span.className = `hc hc${i + 1}`;
+        span.innerHTML = cropSVG(rid, 28, 36);
+        row.appendChild(span);
+    });
 }
 
 // ── RAIN PARTICLES ────────────────────────────────────────
@@ -437,7 +454,7 @@ function showTyping() {
     const wrap = document.createElement('div');
     wrap.className = 'msg ai typing-indicator';
     wrap.id = 'typing-ind';
-    wrap.innerHTML = `<div class="ai-avatar">🌿</div><div class="msg-bubble"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span></div>`;
+    wrap.innerHTML = `<div class="ai-avatar">${AI_AVATAR_SVG}</div><div class="msg-bubble"><span class="tdot"></span><span class="tdot"></span><span class="tdot"></span></div>`;
     box.appendChild(wrap);
     box.scrollTop = box.scrollHeight;
 }
