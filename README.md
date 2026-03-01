@@ -124,21 +124,21 @@ graph TD
     end
 
     subgraph "User Experience Layer"
-        App📱[Flutter Cross-Platform App]
-        Web🖥️[Vanilla JS/CSS Web App]
+        App[Flutter Cross-Platform App]
+        Web[Vanilla JS/CSS Web App]
     end
 
     %% Flows
     ESP <==> Broker
     Broker <==> AMD
-    App📱 <==> Broker
-    Web🖥️ <==> Broker
+    App <==> Broker
+    Web <==> Broker
     
     style ESP fill:#2b2b2b,stroke:#00aa00,stroke-width:2px,color:#fff
     style Broker fill:#1f0f4a,stroke:#8A2BE2,stroke-width:2px,color:#fff
     style AMD fill:#111,stroke:#dd0000,stroke-width:2px,color:#fff
-    style App📱 fill:#01579B,stroke:#0288D1,stroke-width:2px,color:#fff
-    style Web🖥️ fill:#F16529,stroke:#E44D26,stroke-width:2px,color:#fff
+    style App fill:#01579B,stroke:#0288D1,stroke-width:2px,color:#fff
+    style Web fill:#F16529,stroke:#E44D26,stroke-width:2px,color:#fff
 ```
 
 </div>
