@@ -12,7 +12,7 @@
   [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
 
   <br />
-  <h3>📊 <strong><a href="docs/AgriBrain_Submission_v2.pptx">Download the Official Pitch Deck Presentation</a></strong></h3>
+  <h3>📊 <strong><a href="https://github.com/ShravanaHS/Agri-Brain-AI-Orchestrated-Rural-Grid-A-ORG-/blob/main/docs/AgriBrain_Submission.pptx">Download Presentation</a></strong></h3>
 </div>
 
 ---
@@ -214,9 +214,9 @@ We built this iteratively through massive milestones:
 
 ---
 
-## 🤝 Core Team
+##  Core Team
 <div align="center">
-  <h3>Shravan HS</h3>
-  <p><em>Lead Architect / Systems Engineer</em></p>
-  <p>Engineered proudly for the <strong>AMD Slingshot 2026 Innovation Challenge</strong></p>
+  <h3>Shravana H S</h3>
+    <h3>Antigraity</h3>
+    <h3>Chat GPT</h3>
 </div>
