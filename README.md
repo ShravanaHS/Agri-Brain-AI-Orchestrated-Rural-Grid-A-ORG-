@@ -12,7 +12,7 @@
   [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
 
   <br />
-  <h3>📊 <strong><a href="https://github.com/ShravanaHS/Agri-Brain-AI-Orchestrated-Rural-Grid-A-ORG-/blob/main/docs/AgriBrain_Submission.pptx">Download Presentation</a></strong></h3>
+  <h3>📊 <strong><a href="https://github.com/ShravanaHS/Agri-Brain-AI-Orchestrated-Rural-Grid-A-ORG-/blob/main/docs/AgriBrain_Submission.pdf">Download Presentation</a></strong></h3>
 </div>
 
 ---
