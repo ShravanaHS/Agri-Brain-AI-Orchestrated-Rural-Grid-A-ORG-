@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Agri-Brain — Process Flow & Use-Case Diagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a0f1e;
+            color: #fff;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 6px;
+            background: linear-gradient(90deg, #f7941d, #ed1c24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .sub {
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 36px;
+        }
+
+        /* ═══════════════ SECTION HEADERS ═══════════════ */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .sec-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f7941d;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        /* ═══════════════ PROCESS FLOW ═══════════════ */
+        .flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 150px;
+        }
+
+        .step-box {
+            width: 130px;
+            padding: 14px 10px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid;
+            position: relative;
+            cursor: default;
+        }
+
+        .step-box .icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .step-box .name {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .step-box .desc {
+            font-size: 10px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        .step-connector {
+            display: flex;
+            align-items: center;
+            padding-top: 38px;
+        }
+
+        .arrow {
+            font-size: 18px;
+            color: #334155;
+            padding: 0 4px;
+        }
+
+        /* ═══════════════ USE-CASE DIAGRAM (SVG style) ═══════════════ */
+        .uc-wrap {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 0;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .uc-actor {
+            background: #0f172a;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            border-right: 1px solid #1e293b;
+        }
+
+        .actor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .actor-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            border: 2px solid;
+        }
+
+        .actor-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            color: #94a3b8;
+        }
+
+        .uc-system {
+            background: #0d1626;
+            padding: 20px 24px;
+        }
+
+        .sys-title {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #334155;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .uc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .use-case {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-left: 3px solid;
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .use-case .uc-title {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .use-case .uc-actor {
+            font-size: 10px;
+            color: #64748b;
+            margin-bottom: 4px;
+        }
+
+        .use-case ul {
+            padding-left: 14px;
+        }
+
+        .use-case li {
+            font-size: 10px;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+
+        /* ═══════════════ SYSTEM FLOW (detailed) ═══════════════ */
+        .detailed-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .df-lane {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            min-height: 70px;
+        }
+
+        .df-actor {
+            width: 120px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-right: 1px solid #1e293b;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .df-steps {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 0;
+            padding: 10px 16px;
+            border-bottom: 1px dashed #1e293b;
+        }
+
+        .df-box {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 11px;
+            text-align: center;
+            min-width: 110px;
+            flex-shrink: 0;
+        }
+
+        .df-box .df-title {
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .df-box .df-sub {
+            font-size: 9px;
+            color: #64748b;
+        }
+
+        .df-arr {
+            color: #334155;
+            font-size: 14px;
+            padding: 0 6px;
+            flex-shrink: 0;
+        }
+
+        /* ═══════════════ LEGEND ═══════════════ */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .leg-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        .leg-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* colour palette */
+        .c-red {
+            color: #ed1c24;
+            border-color: #ed1c24;
+            background: rgba(237, 28, 36, .08);
+        }
+
+        .c-orange {
+            color: #f7941d;
+            border-color: #f7941d;
+            background: rgba(247, 148, 29, .08);
+        }
+
+        .c-green {
+            color: #22c55e;
+            border-color: #22c55e;
+            background: rgba(34, 197, 94, .08);
+        }
+
+        .c-teal {
+            color: #06b6d4;
+            border-color: #06b6d4;
+            background: rgba(6, 182, 212, .08);
+        }
+
+        .c-purple {
+            color: #a855f7;
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, .08);
+        }
+
+        .c-yellow {
+            color: #eab308;
+            border-color: #eab308;
+            background: rgba(234, 179, 8, .08);
+        }
+
+        .br-red {
+            border-left-color: #ed1c24;
+        }
+
+        .br-orange {
+            border-left-color: #f7941d;
+        }
+
+        .br-green {
+            border-left-color: #22c55e;
+        }
+
+        .br-teal {
+            border-left-color: #06b6d4;
+        }
+
+        .br-purple {
+            border-left-color: #a855f7;
+        }
+
+        .br-yellow {
+            border-left-color: #eab308;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                padding: 15px;
+            }
+
+            h1,
+            p {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Agri-Brain — Process Flow & Use-Case Diagram</h1>
+    <p class="sub">AMD Slingshot 2026 | AI-Orchestrated Rural Grid | System Interaction Overview</p>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  SECTION 1 — HIGH-LEVEL PROCESS FLOW                     -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="section">
+        <div class="sec-title">① High-Level System Process Flow</div>
+        <div class="flow">
+
+            <div class="step">
+                <div class="step-box c-green">
+                    <div class="icon">🌱</div>
+                    <div class="name">Field Sensors</div>
+                    <div class="desc">ESP32 reads Moisture · pH · Rain · PSI</div>
+                </div>
+            </div>
+            <div class="step-connector">
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="step">
+                <div class="step-box c-teal">
+                    <div class="icon">📡</div>
+                    <div class="name">MQTT Broker</div>
+                    <div class="desc">HiveMQ TLS / Mosquitto local relay</div>
+                </div>
+            </div>
+            <div class="step-connector">
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="step">
+                <div class="step-box c-red">
+                    <div class="icon">🧠</div>
+                    <div class="name">AMD AI Gateway</div>
+                    <div class="desc">Python orchestrator runs all AI brains</div>
+                </div>
+            </div>
+            <div class="step-connector">
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="step" style="min-width:200px;">
+                <div class="step-box c-orange" style="width:180px;">
+                    <div class="icon">⚡</div>
+                    <div class="name">AI Decision Engines</div>
+                    <div class="desc">Acoustic · Vision · NLP · Soil · Gemini</div>
+                </div>
+            </div>
+            <div class="step-connector">
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="step">
+                <div class="step-box c-purple">
+                    <div class="icon">🔧</div>
+                    <div class="name">MQTT Command</div>
+                    <div class="desc">control/grid/ON · OFF · alerts</div>
+                </div>
+            </div>
+            <div class="step-connector">
+                <div class="arrow">→</div>
+            </div>
+
+            <div class="step">
+                <div class="step-box c-green">
+                    <div class="icon">🚿</div>
+                    <div class="name">Valve / Field Action</div>
+                    <div class="desc">ESP32 activates grid valves</div>
+                </div>
+            </div>
+            <div class="step-connector">
+                <div class="arrow">↔</div>
+            </div>
+
+            <div class="step">
+                <div class="step-box c-yellow">
+                    <div class="icon">📱</div>
+                    <div class="name">User Interface</div>
+                    <div class="desc">Web + Mobile dashboard alerts</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  SECTION 2 — SWIMLANE DETAILED FLOW                      -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="section">
+        <div class="sec-title">② Detailed Swimlane Process Flow</div>
+        <div style="border:1px solid #1e293b;border-radius:12px;overflow:hidden;">
+
+            <!-- Header row -->
+            <div style="display:flex;background:#1e293b;">
+                <div
+                    style="width:120px;flex-shrink:0;padding:10px;font-size:10px;font-weight:700;color:#64748b;text-align:center;border-right:1px solid #334155;">
+                    ACTOR</div>
+                <div style="flex:1;padding:10px;font-size:10px;font-weight:700;color:#64748b;text-align:center;">PROCESS
+                    STEPS</div>
+            </div>
+
+            <!-- Farmer lane -->
+            <div class="df-lane">
+                <div class="df-actor" style="color:#eab308;background:rgba(234,179,8,.06);">👨‍🌾<br />Farmer</div>
+                <div class="df-steps">
+                    <div class="df-box" style="border-color:#eab308;">
+                        <div class="df-title" style="color:#eab308;">Voice / Manual</div>
+                        <div class="df-sub">Voice cmd or web tap</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#eab308;">
+                        <div class="df-title" style="color:#eab308;">Upload Leaf Photo</div>
+                        <div class="df-sub">Via web dashboard</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#eab308;">
+                        <div class="df-title" style="color:#eab308;">View Alerts</div>
+                        <div class="df-sub">Dashboard / mobile</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#eab308;">
+                        <div class="df-title" style="color:#eab308;">Review Ledger</div>
+                        <div class="df-sub">Farm activity log</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESP32 lane -->
+            <div class="df-lane">
+                <div class="df-actor" style="color:#22c55e;background:rgba(34,197,94,.06);">🔌<br />ESP32 Field</div>
+                <div class="df-steps">
+                    <div class="df-box" style="border-color:#22c55e;">
+                        <div class="df-title" style="color:#22c55e;">Read Sensors</div>
+                        <div class="df-sub">DHT22 · pH · PSI</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#22c55e;">
+                        <div class="df-title" style="color:#22c55e;">Publish Telemetry</div>
+                        <div class="df-sub">MQTT every 5s</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#22c55e;">
+                        <div class="df-title" style="color:#22c55e;">Receive Command</div>
+                        <div class="df-sub">control/grid/ON-OFF</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#22c55e;">
+                        <div class="df-title" style="color:#22c55e;">Actuate Valve</div>
+                        <div class="df-sub">Solenoid open/close</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#22c55e;">
+                        <div class="df-title" style="color:#22c55e;">Safety Timeout</div>
+                        <div class="df-sub">2-hr hard cutoff</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MQTT lane -->
+            <div class="df-lane">
+                <div class="df-actor" style="color:#06b6d4;background:rgba(6,182,212,.06);">📡<br />MQTT Broker</div>
+                <div class="df-steps">
+                    <div class="df-box" style="border-color:#06b6d4;">
+                        <div class="df-title" style="color:#06b6d4;">telemetry/region/*</div>
+                        <div class="df-sub">Sensor data in</div>
+                    </div>
+                    <div class="df-arr">↔</div>
+                    <div class="df-box" style="border-color:#06b6d4;">
+                        <div class="df-title" style="color:#06b6d4;">voice_command</div>
+                        <div class="df-sub">Voice/text input</div>
+                    </div>
+                    <div class="df-arr">↔</div>
+                    <div class="df-box" style="border-color:#06b6d4;">
+                        <div class="df-title" style="color:#06b6d4;">control/grid/*</div>
+                        <div class="df-sub">Commands out</div>
+                    </div>
+                    <div class="df-arr">↔</div>
+                    <div class="df-box" style="border-color:#06b6d4;">
+                        <div class="df-title" style="color:#06b6d4;">ledger/update</div>
+                        <div class="df-sub">Activity log push</div>
+                    </div>
+                    <div class="df-arr">↔</div>
+                    <div class="df-box" style="border-color:#06b6d4;">
+                        <div class="df-title" style="color:#06b6d4;">ai/soil/alert</div>
+                        <div class="df-sub">Health alerts push</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Gateway lane -->
+            <div class="df-lane">
+                <div class="df-actor" style="color:#ed1c24;background:rgba(237,28,36,.06);">🧠<br />AMD Gateway</div>
+                <div class="df-steps">
+                    <div class="df-box" style="border-color:#ed1c24;">
+                        <div class="df-title" style="color:#ed1c24;">Parse Telemetry</div>
+                        <div class="df-sub">verify_mqtt.py</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#f7941d;">
+                        <div class="df-title" style="color:#f7941d;">Soil Brain</div>
+                        <div class="df-sub">pH+moisture analysis</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#a855f7;">
+                        <div class="df-title" style="color:#a855f7;">NLP Brain</div>
+                        <div class="df-sub">Parse voice intent</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#ed1c24;">
+                        <div class="df-title" style="color:#ed1c24;">Irrigation Queue</div>
+                        <div class="df-sub">Sequential dispatch</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#f7941d;">
+                        <div class="df-title" style="color:#f7941d;">Acoustic Brain</div>
+                        <div class="df-sub">PSI guard / E-stop</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision lane -->
+            <div class="df-lane" style="border-bottom:none;">
+                <div class="df-actor" style="color:#a855f7;background:rgba(168,85,247,.06);">👁️<br />Vision + AI</div>
+                <div class="df-steps" style="border-bottom:none;">
+                    <div class="df-box" style="border-color:#a855f7;">
+                        <div class="df-title" style="color:#a855f7;">Receive Image</div>
+                        <div class="df-sub">From web upload</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#a855f7;">
+                        <div class="df-title" style="color:#a855f7;">vision_brain.py</div>
+                        <div class="df-sub">Local AMD inference</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#a855f7;">
+                        <div class="df-title" style="color:#a855f7;">Disease / Pest Alert</div>
+                        <div class="df-sub">Publish to dashboard</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#06b6d4;">
+                        <div class="df-title" style="color:#06b6d4;">Gemini Advisor</div>
+                        <div class="df-sub">Treatment advice</div>
+                    </div>
+                    <div class="df-arr">→</div>
+                    <div class="df-box" style="border-color:#eab308;">
+                        <div class="df-title" style="color:#eab308;">Farmer Notified</div>
+                        <div class="df-sub">Web + Mobile alert</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <!--  SECTION 3 — USE-CASE DIAGRAM                            -->
+    <!-- ══════════════════════════════════════════════════════════ -->
+    <div class="section">
+        <div class="sec-title">③ Use-Case Diagram — Agri-Brain System</div>
+        <div class="uc-wrap">
+
+            <!-- Actors sidebar -->
+            <div class="uc-actor">
+                <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#334155;margin-bottom:8px;">
+                    Actors</div>
+
+                <div class="actor">
+                    <div class="actor-circle" style="border-color:#eab308;background:rgba(234,179,8,.1);">👨‍🌾</div>
+                    <div class="actor-label">Farmer</div>
+                </div>
+                <div class="actor">
+                    <div class="actor-circle" style="border-color:#22c55e;background:rgba(34,197,94,.1);">🔌</div>
+                    <div class="actor-label">ESP32 / Sensors</div>
+                </div>
+                <div class="actor">
+                    <div class="actor-circle" style="border-color:#ed1c24;background:rgba(237,28,36,.1);">🧠</div>
+                    <div class="actor-label">AMD AI Gateway</div>
+                </div>
+                <div class="actor">
+                    <div class="actor-circle" style="border-color:#06b6d4;background:rgba(6,182,212,.1);">🌐</div>
+                    <div class="actor-label">Gemini API</div>
+                </div>
+            </div>
+
+            <!-- Use cases -->
+            <div class="uc-system">
+                <div class="sys-title">«system» Agri-Brain Platform</div>
+                <div class="uc-grid">
+
+                    <div class="use-case br-green">
+                        <div class="uc-title" style="color:#22c55e;">UC-01: Monitor Soil Health</div>
+                        <div class="uc-actor">Actor: ESP32, AMD Gateway</div>
+                        <ul>
+                            <li>ESP32 reads moisture + pH</li>
+                            <li>Publishes to MQTT telemetry</li>
+                            <li>Soil Brain analyses per-grid</li>
+                            <li>Alert if below threshold</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-green">
+                        <div class="uc-title" style="color:#22c55e;">UC-02: Auto Irrigation</div>
+                        <div class="uc-actor">Actor: AMD Gateway, ESP32</div>
+                        <ul>
+                            <li>Moisture &lt; 50% detected</li>
+                            <li>Grid added to queue</li>
+                            <li>Sequential valve opens</li>
+                            <li>Timer auto-closes valve</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-yellow">
+                        <div class="uc-title" style="color:#eab308;">UC-03: Manual Irrigation</div>
+                        <div class="uc-actor">Actor: Farmer, AMD Gateway</div>
+                        <ul>
+                            <li>Farmer taps web/mobile</li>
+                            <li>Selects region + duration</li>
+                            <li>MQTT command dispatched</li>
+                            <li>ESP32 opens valve</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-yellow">
+                        <div class="uc-title" style="color:#eab308;">UC-04: Voice Command</div>
+                        <div class="uc-actor">Actor: Farmer, AMD Gateway</div>
+                        <ul>
+                            <li>Farmer speaks in Kannada/Hindi</li>
+                            <li>NLP Brain parses intent</li>
+                            <li>Irrigation / logging action</li>
+                            <li>Voice feedback returned</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-purple">
+                        <div class="uc-title" style="color:#a855f7;">UC-05: Crop Disease Detection</div>
+                        <div class="uc-actor">Actor: Farmer, AMD Gateway</div>
+                        <ul>
+                            <li>Farmer uploads leaf photo</li>
+                            <li>Vision Brain analyses locally</li>
+                            <li>Disease/pest type returned</li>
+                            <li>Alert + treatment advice given</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-orange">
+                        <div class="uc-title" style="color:#f7941d;">UC-06: Motor Guard</div>
+                        <div class="uc-actor">Actor: ESP32, AMD Gateway</div>
+                        <ul>
+                            <li>ESP32 sends PSI reading</li>
+                            <li>Acoustic Brain checks anomaly</li>
+                            <li>Emergency shutdown triggered</li>
+                            <li>All valves close instantly</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-teal">
+                        <div class="uc-title" style="color:#06b6d4;">UC-07: AI Farm Advisory</div>
+                        <div class="uc-actor">Actor: Farmer, Gemini API</div>
+                        <ul>
+                            <li>Farmer asks advisory question</li>
+                            <li>Gemini Bridge forwards query</li>
+                            <li>AI response returned</li>
+                            <li>Shown in dashboard chat</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-red">
+                        <div class="uc-title" style="color:#ed1c24;">UC-08: Digital Ledger</div>
+                        <div class="uc-actor">Actor: Farmer, AMD Gateway</div>
+                        <ul>
+                            <li>Voice / action captured</li>
+                            <li>NLP extracts material + qty</li>
+                            <li>Stored in SQLite DB</li>
+                            <li>Dashboard shows history</li>
+                        </ul>
+                    </div>
+
+                    <div class="use-case br-green">
+                        <div class="uc-title" style="color:#22c55e;">UC-09: System Heartbeat</div>
+                        <div class="uc-actor">Actor: AMD Gateway</div>
+                        <ul>
+                            <li>Gateway publishes heartbeat/5s</li>
+                            <li>Dashboard shows ONLINE status</li>
+                            <li>Disconnection alert raised</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Legend -->
+                <div class="legend">
+                    <div class="leg-item">
+                        <div class="leg-dot" style="background:#22c55e;"></div>Irrigation & Sensors
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-dot" style="background:#eab308;"></div>Farmer Manual Actions
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-dot" style="background:#a855f7;"></div>Vision AI
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-dot" style="background:#f7941d;"></div>Motor Safety
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-dot" style="background:#06b6d4;"></div>AI Advisory
+                    </div>
+                    <div class="leg-item">
+                        <div class="leg-dot" style="background:#ed1c24;"></div>Data & Logging
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:center;color:#334155;font-size:11px;margin-top:20px;">
+        Agri-Brain: AI-Orchestrated Rural Grid · AMD Slingshot 2026 · Built by Shravana H S
+    </div>
+
+</body>
+
+</html>

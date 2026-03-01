@@ -1,6 +1,8 @@
 # 🌾 Agri-Brain: AI-Orchestrated Rural Grid (A-ORG)
 ### *Solving the "Kilometer Gap" with Edge AI*
 
+📊 **[Download the Pitch Deck Presentation](docs/AgriBrain_Submission_v2.pptx)**
+
 ---
 
 ## 🌟 The Vision

@@ -129,7 +129,10 @@ function buildRegionCards() {
                 <span class="region-num">ZONE ${i}</span>
                 <span class="region-status-badge" id="badge-${i}">IDLE</span>
             </div>
-            <div class="crop-icon" style="--sg:${crop.growSpeed}" id="crop-${i}">${crop.icon}</div>
+            <div class="crop-icon-hero">
+                <span class="ci-name" style="color:${crop.color}">${crop.name}</span>
+                <span class="ci-svg" style="--sg:${crop.growSpeed}" id="crop-${i}">${cropSVG(i, 40, 50)}</span>
+            </div>
             <div class="region-soil-bar">
                 <div class="region-soil-fill" id="soil-fill-${i}" style="width:0%"></div>
             </div>
@@ -366,18 +369,23 @@ client.on('message', (topic, payload) => {
             const mi = $('motor-info');
             if (mi) mi.textContent = `STAGE: ${stage}`;
         }
-
-        else if (topic.includes('ai/gemini/response')) {
+        else if (topic.includes('voice_feedback') || topic.includes('ai/gemini/response')) {
             removeTyping();
-            const d = JSON.parse(pt);
-            const text = d.response || pt;
-            addChatMsg(text, 'ai');
-        }
 
-        else if (topic.includes('voice_feedback')) {
-            const d = JSON.parse(pt);
-            const msg = d.message || d.text || pt;
-            addChatMsg(msg, 'sys');
+            let ptStr = pt.trim();
+            // Handle plain string fallback
+            if (ptStr.startsWith('"') && ptStr.endsWith('"')) {
+                ptStr = ptStr.substring(1, ptStr.length - 1);
+            }
+
+            try {
+                const d = JSON.parse(ptStr);
+                const msg = d.response || d.message || d.text || ptStr;
+                addChatMsg(msg, 'ai');
+            } catch (e) {
+                // If JSON.parse fails, it might just be a raw string
+                addChatMsg(ptStr, 'ai');
+            }
         }
 
         else if (topic.includes('ledger/update')) {

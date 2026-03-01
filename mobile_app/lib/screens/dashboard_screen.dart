@@ -91,12 +91,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   Widget _buildAppBar() {
     return SliverAppBar(
-      backgroundColor: Colors.transparent,
-      title: Text("AGRI-BRAIN", style: GoogleFonts.outfit(fontWeight: FontWeight.bold, color: Colors.greenAccent)),
+      backgroundColor: Color(0xFF0A0E0A),
+      floating: true,
+      title: Row(
+        children: [
+          Image.asset('assets/images/logo.png', height: 32, width: 32),
+          SizedBox(width: 10),
+          Text("AGRI-BRAIN", style: GoogleFonts.outfit(fontWeight: FontWeight.bold, color: Colors.greenAccent)),
+        ],
+      ),
       actions: [
         IconButton(icon: Icon(Icons.camera_alt_outlined, color: Colors.greenAccent), 
           onPressed: () {
-            // Mock Vision Trigger
             final builder = MqttClientPayloadBuilder();
             builder.addString(jsonEncode({"camera_id": "Field_01", "crop": "Tomato"}));
             mqttService.client.publishMessage('${mqttService.topicPrefix}/ai/vision/request', MqttQos.atMostOnce, builder.payload!);

@@ -1,0 +1,108 @@
+--- Slide 1 ---
+  Shape: Google Shape;54;p13 (type PLACEHOLDER (14))
+    Text: 
+  Shape: Google Shape;55;p13 (type PLACEHOLDER (14))
+    Text: 
+  Shape: Google Shape;56;p13 (type PICTURE (13))
+  Shape: Google Shape;57;p13 (type TEXT_BOX (17))
+    Text: Team Details
+  Shape: Google Shape;58;p13 (type TEXT_BOX (17))
+    Text: Team name - 
+Team leader name - 
+Problem Statement - 
+--- Slide 2 ---
+  Shape: Google Shape;63;p14 (type PLACEHOLDER (14))
+    Text: Brief about the idea
+  Shape: Google Shape;64;p14 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;65;p14 (type PICTURE (13))
+  Shape: Google Shape;66;p14 (type PICTURE (13))
+--- Slide 3 ---
+  Shape: Google Shape;71;p15 (type PLACEHOLDER (14))
+    Text: Opportunities
+  Shape: Google Shape;72;p15 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;73;p15 (type TEXT_BOX (17))
+    Text: How different is it from any of the other existing ideas?
+How will it be able to solve the problem?
+USP of the proposed solution
+  Shape: Google Shape;74;p15 (type PICTURE (13))
+  Shape: Google Shape;75;p15 (type PICTURE (13))
+--- Slide 4 ---
+  Shape: Google Shape;80;p16 (type PLACEHOLDER (14))
+    Text: List of features offered by the solution
+  Shape: Google Shape;81;p16 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;82;p16 (type PICTURE (13))
+  Shape: Google Shape;83;p16 (type PICTURE (13))
+--- Slide 5 ---
+  Shape: Google Shape;88;p17 (type PLACEHOLDER (14))
+    Text: Process flow diagram or Use-case diagram
+  Shape: Google Shape;89;p17 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;90;p17 (type PICTURE (13))
+  Shape: Google Shape;91;p17 (type PICTURE (13))
+--- Slide 6 ---
+  Shape: Google Shape;96;p18 (type PLACEHOLDER (14))
+    Text: Wireframes/Mock diagrams of the proposed solution (optional)
+  Shape: Google Shape;97;p18 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;98;p18 (type PICTURE (13))
+  Shape: Google Shape;99;p18 (type PICTURE (13))
+--- Slide 7 ---
+  Shape: Google Shape;104;p19 (type PLACEHOLDER (14))
+    Text: Architecture diagram of the proposed solution
+  Shape: Google Shape;105;p19 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;106;p19 (type PICTURE (13))
+  Shape: Google Shape;107;p19 (type PICTURE (13))
+--- Slide 8 ---
+  Shape: Google Shape;112;p20 (type PLACEHOLDER (14))
+    Text: Technologies to be used in the solution
+  Shape: Google Shape;113;p20 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;114;p20 (type PICTURE (13))
+  Shape: Google Shape;115;p20 (type PICTURE (13))
+--- Slide 9 ---
+  Shape: Google Shape;120;p21 (type PLACEHOLDER (14))
+    Text: Usage of AMD Products/Solutions
+  Shape: Google Shape;121;p21 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;122;p21 (type PICTURE (13))
+  Shape: Google Shape;123;p21 (type PICTURE (13))
+--- Slide 10 ---
+  Shape: Google Shape;128;p22 (type PLACEHOLDER (14))
+    Text: Estimated implementation cost (optional)
+  Shape: Google Shape;129;p22 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;130;p22 (type PICTURE (13))
+  Shape: Google Shape;131;p22 (type PICTURE (13))
+--- Slide 11 ---
+  Shape: Google Shape;136;p23 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;137;p23 (type PLACEHOLDER (14))
+    Text: Prototype Assets (Optional)
+  Shape: Google Shape;138;p23 (type TEXT_BOX (17))
+    Text: GitHub Public Repository Link
+Demo Video Link (Max: 3 Minutes)
+  Shape: Google Shape;139;p23 (type PICTURE (13))
+  Shape: Google Shape;140;p23 (type PICTURE (13))
+--- Slide 12 ---
+  Shape: Google Shape;145;p24 (type PLACEHOLDER (14))
+    Text: Type here
+  Shape: Google Shape;146;p24 (type PLACEHOLDER (14))
+    Text: Add as per the requirements of the contest
+  Shape: Google Shape;147;p24 (type PICTURE (13))
+  Shape: Google Shape;148;p24 (type PICTURE (13))
+--- Slide 13 ---
+  Shape: Google Shape;153;p25 (type PICTURE (13))
+  Shape: Google Shape;154;p25 (type PICTURE (13))
+--- Slide 14 ---
+  Shape: Google Shape;159;p26 (type PICTURE (13))
+  Shape: Google Shape;160;p26 (type PICTURE (13))
+--- Slide 15 ---
+  Shape: Google Shape;165;p27 (type PLACEHOLDER (14))
+    Text: 
+  Shape: Google Shape;166;p27 (type PLACEHOLDER (14))
+    Text: 
+  Shape: Google Shape;167;p27 (type PICTURE (13))

@@ -131,11 +131,18 @@ def on_message(client, userdata, msg):
 
         # ── Voice / Text Command ───────────────────────────────
         elif "voice_command" in topic:
-            print(f"[CMD] '{payload}'")
+            # Web sends {"query": "msg", "source": "web"}, parse it or fallback to raw
+            try:
+                cmd_data = json.loads(payload)
+                user_text = cmd_data.get("query", payload)
+            except:
+                user_text = payload
+                
+            print(f"[CMD] '{user_text}'")
 
             # 1. NLP parse
             try:
-                parsed = nlp_brain.process_text(payload)
+                parsed = nlp_brain.process_text(user_text)
             except Exception as e:
                 print(f"[NLP] Error: {e}")
                 parsed = {"action": "GENERAL", "material": "UNKNOWN", "quantity": "N/A",
@@ -143,19 +150,19 @@ def on_message(client, userdata, msg):
 
             # 2. Ledger (non-blocking)
             try:
-                ledger.add_entry(payload, parsed["action"], parsed["material"], parsed["quantity"])
+                ledger.add_entry(user_text, parsed["action"], parsed["material"], parsed["quantity"])
                 ledger_payload = {
                     "action":   parsed["action"],
                     "material": parsed["material"],
                     "quantity": parsed["quantity"],
-                    "raw":      payload,
+                    "raw":      user_text,
                     "ts":       time.time()
                 }
                 client.publish(f"{TOPIC_PREFIX}/ledger/update", json.dumps(ledger_payload))
             except Exception as le:
                 print(f"[LEDGER] Warning: {le}")
 
-            # 3. Irrigation command?
+            # 3. Irrigation command? 
             if parsed["action"] in ("IRRIGATE", "WATER") and (parsed.get("grid") or parsed.get("grids")):
                 grids_to_do = parsed.get("grids") or []
                 if not grids_to_do and parsed.get("grid"):
@@ -171,25 +178,26 @@ def on_message(client, userdata, msg):
                     labels.append(f"Region {gid} for {dur:.0f} min")
 
                 reply = "Queued " + " and ".join(labels) + "."
-                client.publish(f"{TOPIC_PREFIX}/voice_feedback", json.dumps({"message": reply}))
+                client.publish(f"{TOPIC_PREFIX}/ai/gemini/response", json.dumps({"response": reply}))
                 process_sequential_irrigation(client)
 
             # 4. AI advisory (non-blocking thread)
             else:
-                client.publish(f"{TOPIC_PREFIX}/voice_feedback",
-                               json.dumps({"message": "Consulting Agri-Gemini… please wait."}))
+                client.publish(f"{TOPIC_PREFIX}/ai/gemini/response",
+                               json.dumps({"response": "Consulting Agri-Gemini… please wait."}))
 
-                def ai_thread():
+                def ai_thread(text_to_analyze):
                     try:
-                        advice = gemini_bridge.ask_advisor(payload)
-                        client.publish(f"{TOPIC_PREFIX}/ai/gemini/response", json.dumps(advice))
+                        advice_dict = gemini_bridge.ask_advisor(text_to_analyze)
+                        # advice_dict already contains {"query": ..., "response": ...}
+                        client.publish(f"{TOPIC_PREFIX}/ai/gemini/response", json.dumps(advice_dict))
                         print("[AI] Gemini response sent.")
                     except Exception as ai_err:
                         print(f"[AI] Error: {ai_err}")
-                        client.publish(f"{TOPIC_PREFIX}/voice_feedback",
-                                       json.dumps({"message": "I couldn't get a response right now. Please try again."}))
+                        client.publish(f"{TOPIC_PREFIX}/ai/gemini/response",
+                                       json.dumps({"response": "I couldn't get a response right now. Please try again."}))
 
-                threading.Thread(target=ai_thread, daemon=True).start()
+                threading.Thread(target=ai_thread, args=(user_text,), daemon=True).start()
 
         # ── Web-App Manual Override ────────────────────────────
         elif "control/manual" in topic:
