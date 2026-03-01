@@ -195,12 +195,8 @@ python -m http.server 8000
 ---
 
 ## 📈 Simulation Results (Phase 1)
-<div align="center">
-  <img src="assets/phase1_demo.png" alt="Phase 1 Simulation Result" width="80%">
-  <p><em>Above: Snapshot of the Wokwi ESP32 simulation reporting critical 0% moisture, triggering the AMD Python AI Watcher to instantly blast out AUTO-COMMANDS, physically turning ON all 10 safety grids.</em></p>
-</div>
 
-### 🌐 [Click Here to View the LIVE Wokwi Simulation Online](https://wokwi.com/projects/456861684447098881)
+### 🌐 [Click Here to View the LIVE Wokwi Simulation Online](https://wokwi.com/projects/457101570943087617)
 
 ---
 
