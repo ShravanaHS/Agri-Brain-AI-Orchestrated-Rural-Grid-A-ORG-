@@ -213,6 +213,5 @@ We built this iteratively through massive milestones:
 ##  Core Team
 <div align="center">
   <h3>Shravana H S</h3>
-    <h3>Antigraity</h3>
-    <h3>Chat GPT</h3>
+  
 </div>
